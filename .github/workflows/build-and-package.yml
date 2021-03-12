@@ -1,4 +1,4 @@
-name: AA agenda meeting announcer
+name: test and push to docker
 on:
   push:
     branches:
