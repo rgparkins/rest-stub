@@ -1,0 +1,14 @@
+name: AA agenda meeting announcer
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test-and-push:
+    runs-on: ubuntu-latest
+    name: test and push to dockerhub
+    env:
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+    steps:
+      - name: test
+        run: npm test
