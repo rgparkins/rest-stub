@@ -3,6 +3,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const health = require('./routes/health');
+const mime = require('./routes/mime-routes');
 
 var app = express();
 
@@ -11,7 +12,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'files')));
+
+app.use('*', mime);
 
 // error handler
 app.use(function(err, req, res, next) {
