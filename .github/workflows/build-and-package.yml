@@ -14,8 +14,11 @@ jobs:
       - name: test
         run: ./test.sh
       - name: publish to docker
+        env:
+          DOCKERHUB_USER: ${{ secrets.DOCKERHUB_USER }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         run: |
-          docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+          docker login -u $DOCKERHUB_USER -p $DOCKERHUB_TOKEN
       - name: build
         run: |
           docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USER }}/http-stub:${date +%s}
