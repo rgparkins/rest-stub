@@ -9,5 +9,7 @@ jobs:
     env:
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
     steps:
+      - name: Checkout code
+          uses: actions/checkout@v2
       - name: test
         run: ./test.sh
