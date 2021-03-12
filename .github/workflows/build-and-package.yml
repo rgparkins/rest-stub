@@ -6,8 +6,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     name: test and push to dockerhub
-    env:
-      DOCKERTAG: $(date +%s)
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -21,7 +19,7 @@ jobs:
           docker login -u $DOCKERHUB_USER -p $DOCKERHUB_TOKEN
       - name: build
         run: |
-          docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USER }}/rest-stub:$DOCKERTAG
+          docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USER }}/rest-stub:latest
       - name: push
         run: |
-          docker push ${{ secrets.DOCKERHUB_USER }}/rest-stub:$DOCKERTAG
+          docker push ${{ secrets.DOCKERHUB_USER }}/rest-stub:latest
