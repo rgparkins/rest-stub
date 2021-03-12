@@ -19,5 +19,3 @@ The server will return the static file you mount in, so
 | `/test` | `text/xml` | `./text/json/test.xml` |
 | `/test` | `text/html` | `./text/html/test.xml` |
 | `/user/3453312` | `application/json` | `./application/json/user/3453312.json` |
-
-if you mount in 'application/json/test.json'
