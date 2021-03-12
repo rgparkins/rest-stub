@@ -23,5 +23,5 @@ jobs:
       - name: push
         run: |
           docker push ${{ secrets.DOCKERHUB_USER }}/rest-stub:$(date +%F)
-          docker tag ${{ secrets.DOCKERHUB_USER }}/rest-stub:latest
+          docker tag ${{ secrets.DOCKERHUB_USER }}/rest-stub:$(date +%F) ${{ secrets.DOCKERHUB_USER }}/rest-stub:latest
           docker push ${{ secrets.DOCKERHUB_USER }}/rest-stub:latest
