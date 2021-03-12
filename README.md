@@ -13,7 +13,7 @@ docker run \
 
 The server will return the static file you mount in, so 
 
-| path | mime | directory |
+| path | mime sent | directory |
 |---|---|---|
 | `/test` | `application/json` | `./application/json/test.json` |
 | `/test` | `text/xml` | `./text/json/test.xml` |
