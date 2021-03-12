@@ -13,3 +13,12 @@ jobs:
         uses: actions/checkout@v2
       - name: test
         run: ./test.sh
+      - name: publish to docker
+        run: |
+          docker login -u ${{ secrets.DOCKERHUB_USER }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: build
+        run: |
+          docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USER }}/http-stub:${date +%s}
+      - name: push
+          run: |
+            docker push ${{ secrets.DOCKERHUB_USER }}/http-stub
