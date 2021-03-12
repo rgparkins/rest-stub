@@ -10,4 +10,4 @@ jobs:
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
     steps:
       - name: test
-        run: npm test
+        run: ./test.sh
