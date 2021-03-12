@@ -1,8 +1,7 @@
 name: test and push to docker
 on:
   push:
-    branches:
-      - master
+    branches: main
 jobs:
   test:
     runs-on: ubuntu-latest
