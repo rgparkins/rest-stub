@@ -20,5 +20,5 @@ jobs:
         run: |
           docker build . --file Dockerfile --tag ${{ secrets.DOCKERHUB_USER }}/http-stub:${date +%s}
       - name: push
-          run: |
-            docker push ${{ secrets.DOCKERHUB_USER }}/http-stub
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USER }}/rest-stub
