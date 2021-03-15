@@ -21,3 +21,11 @@ The server will return the static file you mount in, so
 | `/user/3453312` | `application/json` | `./application/json/user/3453312.json` |
 
 You can find the docker image [here](https://hub.docker.com/repository/docker/rgparkins/rest-stub)
+
+## Environment variables
+
+`PORT` is the configured port the app should run on. This defaulted to 3000
+
+## Test
+
+The system will response to a `GET` on `/health/ping`  
